@@ -1,0 +1,252 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 450px;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.container h3 {
+  font-weight: 700;
+  font-size: 28px;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+.input-group {
+  margin-bottom: 25px;
+}
+
+.container input {
+  width: 100%;
+  height: 55px;
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  outline: none;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.container input:focus {
+  border-color: #667eea;
+  background: #fff;
+  box-shadow: 0 0 0 5px rgba(102, 126, 234, 0.1);
+}
+
+.qr-container {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#qrImage {
+  max-width: 200px;
+  transition: all 0.3s ease;
+}
+
+#qrImage.show-img {
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  width: 100%;
+  height: 55px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+    padding: 25px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.theme-toggle svg {
+  width: 24px;
+  height: 24px;
+  color: #1a1a1a;
+}
+
+.moon-icon {
+  display: none;
+}
+
+/* Dark theme styles */
+body.dark-theme {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+body.dark-theme .container {
+  background: rgba(30, 32, 44, 0.95);
+}
+
+body.dark-theme .container h3 {
+  color: #fff;
+}
+
+body.dark-theme .subtitle {
+  color: #a0a0a0;
+}
+
+body.dark-theme .container input {
+  background: #2a2d3e;
+  border-color: #363b4d;
+  color: #fff;
+}
+
+body.dark-theme .container input:focus {
+  border-color: #667eea;
+  background: #2a2d3e;
+}
+
+body.dark-theme .qr-container {
+  background: #2a2d3e;
+}
+
+body.dark-theme .theme-toggle svg {
+  color: #fff;
+}
+
+body.dark-theme #qrImage.show-img {
+  background: #363b4d;
+}
+
+/* Show/hide icons based on theme */
+body.dark-theme .sun-icon {
+  display: none;
+}
+
+body.dark-theme .moon-icon {
+  display: block;
+}
+
+body:not(.dark-theme) .sun-icon {
+  display: block;
+}
+
+body:not(.dark-theme) .moon-icon {
+  display: none;
+}
+
+/* Footer styles */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.copyright {
+  color: #fff;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-2px);
+  opacity: 0.8;
+}
+
+/* Dark theme footer adjustments */
+body.dark-theme .footer {
+  background: rgba(26, 26, 46, 0.1);
+}
+
+body.dark-theme .copyright,
+body.dark-theme .social-links a {
+  color: #fff;
+}
+
+/* Light theme footer adjustments */
+body:not(.dark-theme) .copyright,
+body:not(.dark-theme) .social-links a {
+  color: #fff;
+}
